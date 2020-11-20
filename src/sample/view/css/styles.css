@@ -1,3 +1,7 @@
 .tic-button {
     -fx-font: 100px;
 }
+
+.help-title {
+    -fx-font: 1.2em;
+}

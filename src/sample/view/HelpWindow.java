@@ -2,6 +2,7 @@ package sample.view;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -11,31 +12,45 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 
 public class HelpWindow {
-    public static void display1(ActionEvent actionEvent, Class classObj){
+    @FXML
+    public Button btn0;
+
+    public static void displayHelp(ActionEvent actionEvent, Class classObj) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(classObj.getResource("/sample/view/sample.fxml"));
-//                fxmlLoader.setController(Controller);
+            fxmlLoader.setLocation(classObj.getResource("/sample/view/HelpWindow.fxml"));
             /*
              * if "fx:controller" is not set in fxml
              * fxmlLoader.setController(NewWindowController);
              */
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            // css is not working currently due to the intelliJ license
+//            scene.getStylesheets().add("sample/view/css/styles.css");
             Stage stage = new Stage();
-            stage.setTitle("New Window");
+            stage.setTitle("Help");
             stage.setScene(scene);
             stage.show();
             // Hide this current window (if this is what you want)
 //            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
         }
     }
-    public static void display(){
-        /* show in another tab */
+
+    public void btnClickReturn(ActionEvent actionEvent) {
+        Window w =btn0.getScene().getWindow();
+        if(w instanceof Stage)
+            ((Stage) w).close();
+
+    }
+
+
+    public static void display() {
+        /* way 1 */
 //        Stage window = new Stage();
 //        window.initModality(Modality.APPLICATION_MODAL);
 //        // window.getClass().getResource("view/screen2.fxml");
@@ -48,7 +63,7 @@ public class HelpWindow {
 //        window.showAndWait();
 
 
-        /* show in another tab */
+        /* way 2 with adding objects in code */
 
 //        Stage window = new Stage();
 //        // while this window is on the screen, you cannot interact
@@ -83,4 +98,5 @@ public class HelpWindow {
 //        window.setScene(scene);
 //        window.showAndWait();
     }
+
 }

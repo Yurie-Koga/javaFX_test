@@ -10,8 +10,8 @@
     <Button fx:id="btn0" styleClass="tic-button" onAction="#btnClick" prefWidth="28.0" text="O" GridPane.columnIndex="0" GridPane.rowIndex="0" />
     <Button fx:id="btn1" onAction="#btnClick" text="X" GridPane.columnIndex="1" GridPane.rowIndex="0" />
     <Button fx:id="btn2" onAction="#btnClick" text="O" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-    <Button fx:id="btn3" onAction="#btnClick" text="another screen" GridPane.columnIndex="0" GridPane.rowIndex="1" >
-      <rotationAxis>
+    <Button fx:id="btn3" onAction="#btnClickHelp" text="Help" GridPane.columnIndex="0" GridPane.rowIndex="1" >
+        <rotationAxis>
          <Point3D x="1.0" z="1.0" />
       </rotationAxis>
    </Button>
