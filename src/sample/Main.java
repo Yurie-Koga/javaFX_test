@@ -17,8 +17,8 @@ public class Main extends Application {
         // Main screen
         Parent root = FXMLLoader.load(getClass().getResource("view/sample.fxml"));
         primaryStage.setTitle("Hello World");
-        Scene main = new Scene(root, 700, 500);
-//        main.getStylesheets().add("sample/view/css/styles.css");
+        Scene main = new Scene(root, 1018, 720);
+        //        main.getStylesheets().add("sample/view/css/styles.css");
 
 //        // Dynamically add object
 //        GridPane gridPane = (GridPane) main.getRoot();
