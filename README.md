@@ -2,6 +2,7 @@
 
 ## JFoeniX
 You need to set the library dependencies with following steps:
+
 On IntelliJ, 
 1. Open Project Structure: under File menu
 2. Go to Project Settings > Modules > Dependencies
